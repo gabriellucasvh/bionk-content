@@ -23,7 +23,7 @@ export default function HeaderAjuda() {
 	};
 
 	return (
-		<header className="rounded-b-2xl bg-linear-to-r from-green-800 to-green-500 px-4 py-8 shadow-md md:py-10">
+		<header className="rounded-b-2xl bg-green-800 px-4 py-8 shadow-md md:py-10">
 			<div className="mx-auto max-w-6xl">
 				<div className="mb-7 flex w-full flex-row items-center justify-center gap-3">
 					<Link className="inline-block" href="/">

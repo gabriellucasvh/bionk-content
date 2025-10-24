@@ -168,7 +168,7 @@ export default function HelpCenter() {
           <CardContent>
             <Accordion className="w-full" collapsible type="single">
               <AccordionItem value="item-1">
-                <AccordionTrigger>
+                <AccordionTrigger className="cursor-pointer">
                   Como posso alterar meu nome de usuário?
                 </AccordionTrigger>
                 <AccordionContent>
@@ -179,7 +179,7 @@ export default function HelpCenter() {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
-                <AccordionTrigger>
+                <AccordionTrigger className="cursor-pointer">
                   Posso adicionar mais de um link para a mesma rede social?
                 </AccordionTrigger>
                 <AccordionContent>
@@ -189,7 +189,7 @@ export default function HelpCenter() {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">
-                <AccordionTrigger>
+                <AccordionTrigger className="cursor-pointer">
                   Como posso ver quantas pessoas clicaram nos meus links?
                 </AccordionTrigger>
                 <AccordionContent>
@@ -199,7 +199,7 @@ export default function HelpCenter() {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-4">
-                <AccordionTrigger>
+                <AccordionTrigger className="cursor-pointer">
                   É possível programar a publicação de links?
                 </AccordionTrigger>
                 <AccordionContent>

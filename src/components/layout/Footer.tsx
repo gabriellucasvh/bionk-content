@@ -5,9 +5,7 @@ import React from "react";
 
 const navigation = {
 	resources: [
-		{ name: "Ajuda", href: "/ajuda" },
 		{ name: "Descubra", href: "/descubra" },
-		{ name: "Templates", href: "/templates" },
 		{ name: "Preços e Planos", href: "/planos" },
 	],
 	contact: [
@@ -21,23 +19,6 @@ const navigation = {
 		{ name: "Diretrizes da Comunidade", href: "/comunidade" },
 		{ name: "Reportar Violação", href: "/reportar-violacao" },
 	],
-	social: [
-		{
-			name: "Twitter",
-			href: "#",
-			icon: "/icons/x.svg",
-		},
-		{
-			name: "Instagram",
-			href: "#",
-			icon: "/icons/instagram.svg",
-		},
-		{
-			name: "Facebook",
-			href: "#",
-			icon: "/icons/facebook.svg",
-		},
-	],
 };
 
 const Footer = () => {
@@ -47,7 +28,7 @@ const Footer = () => {
 				<div className="xl:grid xl:grid-cols-3 xl:gap-8">
 					{/* Logo e descrição */}
 					<div className="space-y-4">
-						<Link className="inline-block" href="/">
+						<Link className="inline-block" href="https://bionk.me">
 							<Image
 								alt="Bionk Logo"
 								className="h-14 w-auto"
@@ -121,26 +102,8 @@ const Footer = () => {
 					</div>
 				</div>
 
-				{/* Rodapé inferior com copyright e ícones sociais */}
+				{/* Rodapé inferior com copyright*/}
 				<div className="mt-16 border-slate-800 border-t pt-8 sm:flex sm:items-center sm:justify-between">
-					<div className="flex space-x-6 sm:order-2">
-						{navigation.social.map((item) => (
-							<Link
-								className="text-slate-500 transition-colors duration-300 hover:text-green-400"
-								href={item.href}
-								key={item.name}
-							>
-								<span className="sr-only">{item.name}</span>
-								<Image
-									alt={item.name}
-									className="h-5 w-5 opacity-60 brightness-0 invert filter transition-opacity duration-300 hover:opacity-100"
-									height={20}
-									src={item.icon}
-									width={20}
-								/>
-							</Link>
-						))}
-					</div>
 					<p className="mt-6 text-slate-500 text-xs leading-5 sm:order-1 sm:mt-0">
 						&copy; {new Date().getFullYear()} Bionk. Todos os direitos
 						reservados.
