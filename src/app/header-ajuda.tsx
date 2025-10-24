@@ -57,7 +57,7 @@ export default function HeaderAjuda() {
 							value={query}
 						/>
 						<Button
-							className="-translate-y-1/2 absolute top-1/2 right-1 h-12 rounded-full bg-green-600 px-4 transition-colors hover:bg-green-700"
+							className="-translate-y-1/2 absolute top-1/2 right-1 h-12 rounded-full bg-green-600 px-4 transition-colors hover:bg-green-700 cursor-pointer"
 							type="submit"
 						>
 							Buscar

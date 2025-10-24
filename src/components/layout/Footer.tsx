@@ -5,19 +5,21 @@ import React from "react";
 
 const navigation = {
 	resources: [
-		{ name: "Descubra", href: "/descubra" },
-		{ name: "Preços e Planos", href: "/planos" },
+		{ name: "Bionk", href: "https://bionk.me" },
+		{ name: "Login", href: "https://bionk.me/login" },
+		{ name: "Descubra", href: "https://bionk.me//descubra" },
+		{ name: "Preços e Planos", href: "https://bionk.me//planos" },
 	],
 	contact: [
-		{ name: "Contato", href: "/contato" },
+		{ name: "Contato", href: "https://bionk.me/contato" },
 		{ name: "contato@bionk.me", href: "mailto:contato@bionk.me" },
 	],
 	legal: [
-		{ name: "Termos e Condições", href: "/termos" },
-		{ name: "Política de Privacidade", href: "/privacidade" },
-		{ name: "Uso de Cookies", href: "/cookies" },
-		{ name: "Diretrizes da Comunidade", href: "/comunidade" },
-		{ name: "Reportar Violação", href: "/reportar-violacao" },
+		{ name: "Termos e Condições", href: "https://bionk.me/termos" },
+		{ name: "Política de Privacidade", href: "https://bionk.me/privacidade" },
+		{ name: "Uso de Cookies", href: "https://bionk.me/cookies" },
+		{ name: "Diretrizes da Comunidade", href: "https://bionk.me/comunidade" },
+		{ name: "Reportar Violação", href: "https://bionk.me/reportar-violacao" },
 	],
 };
 

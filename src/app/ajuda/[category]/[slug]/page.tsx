@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { getContent, getAllSlugs, getTitleFromSlug, type Category } from "@/app/lib/content";
 import { Separator } from "@/components/ui/separator";
+import Footer from "@/components/layout/Footer";
 
 export async function generateStaticParams() {
   const categories: Category[] = ["guia", "artigo"];
@@ -54,6 +55,7 @@ export default async function AjudaItemPage({ params }: { params: Promise<{ cate
         </div>
         <a href="/" className="no-underline bg-lime-400 hover:bg-lime-500 text-black px-6 py-4 rounded-full mx-auto w-full">Voltar para a Central de Ajuda</a>
       </div>
+      <Footer />
     </div>
   );
 }

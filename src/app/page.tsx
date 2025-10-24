@@ -36,6 +36,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import HeaderAjuda from "@/app/header-ajuda";
+import Footer from "@/components/layout/Footer";
 
 export const LINKS = {
   primeirosPassos: [
@@ -243,6 +244,7 @@ export default function HelpCenter() {
           </CardContent>
         </Card>
       </div>
+      <Footer/>
     </div>
   );
 }
