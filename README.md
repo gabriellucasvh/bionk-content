@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Central de Ajuda — Bionk Content
 
-## Getting Started
+Este projeto é a Central de Ajuda da plataforma Bionk. Ele roda como uma aplicação Next.js independente, consumindo conteúdo em Markdown e oferecendo páginas de guia e artigo, além de busca simples.
 
-First, run the development server:
+## Principais Recursos
+- Renderização de Markdown com `react-markdown` e `gray-matter`.
+- Estrutura de conteúdo em `src/content/ajuda` com categorias `guia` e `artigo`.
+- Busca de guias em `/ajuda/guia/search?q=...`.
+- Tailwind CSS v4 com tipografia (`@tailwindcss/typography`) e classes `prose`.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Requisitos
+- Node.js 18+ (recomendado)
+- npm (ou pnpm/yarn/bun)
+
+## Instalação e Execução
+- Instalar dependências: `npm install`
+- Ambiente de desenvolvimento: `npm run dev`
+- Abrir no navegador: `http://localhost:3000`
+
+Para build de produção:
+- `npm run build`
+- `npm run start`
+
+## Estrutura de Pastas
+```
+src/
+  app/
+    ajuda/
+      [category]/[slug]/page.tsx   # Página de artigo/guia
+      guia/search/page.tsx         # Página de busca (somente guias)
+    header-ajuda.tsx               # Cabeçalho da Central de Ajuda
+    layout.tsx                     # Fonte global e estilos
+    globals.css                    # Tailwind (base, componentes, utilidades + typography)
+    lib/content.ts                 # Loader de conteúdo e utilidades
+  components/
+    ui/                            # Componentes reutilizáveis (Separator, etc.)
+    layout/                        # Footer e afins
+  content/
+    ajuda/
+      guia/                        # Markdown de guias
+      artigo/                      # Markdown de artigos
+  fonts/
+    Satoshi-Variable.woff2        # Fonte Satoshi
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Conteúdo em Markdown
+- Local: `src/content/ajuda/<categoria>/<slug>.md`
+- Suporta subpastas dentro das categorias.
+- Frontmatter (recomendado):
+  ```yaml
+  title: "Título do artigo"
+  description: "Breve descrição do conteúdo"
+  # updatedAt: "2024-10-01"   # opcional, atualmente não exibido
+  ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Rotas Importantes
+- Home da Central: `/`
+- Artigos/Guias: `/ajuda/<category>/<slug>`
+- Busca de Guias: `/ajuda/guia/search?q=<termo>`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Como Funciona a Busca
+- Página `src/app/ajuda/guia/search/page.tsx` lê `searchParams.q`.
+- Indexa todos os slugs de `guia` e filtra por ocorrência de `q` em título, descrição e conteúdo.
+- Resultados linkam para `/ajuda/guia/<slug>`.
 
-## Learn More
+## Limitações e Próximos Passos
+- A busca atual cobre apenas `guia`. Pode ser estendida para `artigo`.
+- Slugs duplicados em subpastas são evitados por set, mas é recomendável manter slugs únicos.
+- Ranking simples (priorizar título/descrição) pode melhorar relevância.
 
-To learn more about Next.js, take a look at the following resources:
+## Contribuição
+- Padronize texto e metadados nos arquivos `.md`.
+- Mantenha consistência visual com componentes existentes.
+- Antes de abrir PRs, rode localmente: `npm run dev` e valide páginas e busca.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Licença
+Projeto interno da Bionk. Não adicionar cabeçalhos de licença sem orientação específica.
