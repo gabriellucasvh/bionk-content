@@ -53,7 +53,7 @@ export default async function AjudaItemPage({ params }: { params: Promise<{ cate
         <div className="mt-0 mb-10">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>{item.content}</ReactMarkdown>
         </div>
-        <a href="/" className="no-underline bg-lime-400 hover:bg-lime-500 text-black px-6 py-4 rounded-full mx-auto w-full">Voltar para a Central de Ajuda</a>
+        <a href="/" className="no-underline bg-bunker-950 hover:bg-bunker-900 text-white px-6 py-4 rounded-full mx-auto w-full">Voltar para a Central de Ajuda</a>
       </div>
       <Footer />
     </div>

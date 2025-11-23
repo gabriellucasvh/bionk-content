@@ -69,7 +69,7 @@ export default async function SearchGuiaPage({ searchParams }: { searchParams: P
         ) : null}
 
         <div className="mt-8">
-          <Link href="/" className="no-underline bg-lime-400 hover:bg-lime-500 text-black px-6 py-4 rounded-full inline-block">
+          <Link href="/" className="no-underline bg-bunker-950 hover:bg-bunker-900 text-white px-6 py-4 rounded-full inline-block">
             Voltar para a Central de Ajuda
           </Link>
         </div>
