@@ -6,42 +6,59 @@ import React from "react";
 const navigation = {
 	resources: [
 		{ name: "Bionk", href: "https://bionk.me" },
-		{ name: "Login", href: "https://bionk.me/login" },
-		{ name: "Descubra", href: "https://bionk.me//descubra" },
-		{ name: "Preços e Planos", href: "https://bionk.me//planos" },
+		{ name: "Descubra", href: "/descubra" },
+		{ name: "Templates", href: "/templates" },
+		{ name: "Preços e Planos", href: "/planos" },
 	],
 	contact: [
-		{ name: "Contato", href: "https://bionk.me/contato" },
+		{ name: "Contato", href: "/contato" },
 		{ name: "contato@bionk.me", href: "mailto:contato@bionk.me" },
 	],
 	legal: [
-		{ name: "Termos e Condições", href: "https://bionk.me/termos" },
-		{ name: "Política de Privacidade", href: "https://bionk.me/privacidade" },
-		{ name: "Uso de Cookies", href: "https://bionk.me/cookies" },
-		{ name: "Diretrizes da Comunidade", href: "https://bionk.me/comunidade" },
-		{ name: "Reportar Violação", href: "https://bionk.me/reportar-violacao" },
+		{ name: "Termos e Condições", href: "/termos" },
+		{ name: "Política de Privacidade", href: "/privacidade" },
+		{ name: "Uso de Cookies", href: "/cookies" },
+		{ name: "Diretrizes da Comunidade", href: "/comunidade" },
+		{ name: "Reportar Violação", href: "/reportar-violacao" },
+	],
+	social: [
+		{
+			name: "Twitter",
+			href: "#",
+			icon: "/icons/x.svg",
+		},
+		{
+			name: "Instagram",
+			href: "#",
+			icon: "/icons/instagram.svg",
+		},
+		{
+			name: "Facebook",
+			href: "#",
+			icon: "/icons/facebook.svg",
+		},
 	],
 };
 
 const Footer = () => {
 	return (
-		<footer className="w-full bg-slate-900 text-slate-300">
+		<footer className="w-full bg-bunker-950 text-bunker-300">
 			<div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-10">
 				<div className="xl:grid xl:grid-cols-3 xl:gap-8">
 					{/* Logo e descrição */}
 					<div className="space-y-4">
-						<Link className="inline-block" href="https://bionk.me">
+						<Link className="inline-block" href="/">
 							<Image
 								alt="Bionk Logo"
 								className="h-14 w-auto"
 								height={28}
 								priority
-								src="https://res.cloudinary.com/dlfpjuk2r/image/upload/v1755641014/bionk-logo-icon_ya5kbp.svg"
+								src="/bionk-icon.svg"
 								width={110}
 							/>
 						</Link>
-						<p className="text-slate-400 text-sm leading-6">
-							O melhor gerenciador de links para o seu negócio.
+						<p className="text-bunker-400 text-sm leading-6">
+							Criado para quem compartilha o que ama.
 						</p>
 					</div>
 
@@ -49,14 +66,14 @@ const Footer = () => {
 					<div className="mt-12 grid grid-cols-1 gap-8 xl:col-span-2 xl:mt-0">
 						<div className="md:grid md:grid-cols-3 md:gap-8">
 							<div>
-								<h3 className="font-semibold text-white text-xs uppercase tracking-wider">
+								<h3 className="font-black text-white text-xs uppercase tracking-wider">
 									Recursos
 								</h3>
 								<ul className="mt-4 space-y-3">
 									{navigation.resources.map((item) => (
 										<li key={item.name}>
 											<Link
-												className="text-slate-400 text-sm transition-colors duration-300 hover:text-green-400"
+												className="text-bunker-400 text-sm decoration-2 decoration-sky-400 transition-colors duration-300 hover:text-white hover:underline"
 												href={item.href}
 											>
 												{item.name}
@@ -66,14 +83,14 @@ const Footer = () => {
 								</ul>
 							</div>
 							<div className="mt-10 md:mt-0">
-								<h3 className="font-semibold text-white text-xs uppercase tracking-wider">
+								<h3 className="font-black text-white text-xs uppercase tracking-wider">
 									Legal
 								</h3>
 								<ul className="mt-4 space-y-3">
 									{navigation.legal.map((item) => (
 										<li key={item.name}>
 											<Link
-												className="text-slate-400 text-sm transition-colors duration-300 hover:text-green-400"
+												className="text-bunker-400 text-sm decoration-2 decoration-sky-400 transition-colors duration-300 hover:text-white hover:underline"
 												href={item.href}
 											>
 												{item.name}
@@ -83,14 +100,14 @@ const Footer = () => {
 								</ul>
 							</div>
 							<div className="mt-10 md:mt-0">
-								<h3 className="font-semibold text-white text-xs uppercase tracking-wider">
+								<h3 className="font-black text-white text-xs uppercase tracking-wider">
 									Contato
 								</h3>
 								<ul className="mt-4 space-y-3">
 									{navigation.contact.map((item) => (
 										<li key={item.name}>
 											<Link
-												className="text-slate-400 text-sm transition-colors duration-300 hover:text-green-400"
+												className="text-bunker-400 text-sm decoration-2 decoration-sky-400 transition-colors duration-300 hover:text-white hover:underline"
 												href={item.href}
 											>
 												{item.name}
@@ -104,24 +121,41 @@ const Footer = () => {
 					</div>
 				</div>
 
-				{/* Rodapé inferior com copyright*/}
-				<div className="mt-16 border-slate-800 border-t pt-8 sm:flex sm:items-center sm:justify-between">
-					<p className="mt-6 text-slate-500 text-xs leading-5 sm:order-1 sm:mt-0">
+				{/* Rodapé inferior com copyright e ícones sociais */}
+				<div className="mt-16 border-bunker-800 border-t pt-8 sm:flex sm:items-center sm:justify-between">
+					{/* <div className="flex space-x-6 sm:order-2">
+						{navigation.social.map((item) => (
+							<Link
+								aria-disabled={true}
+								className="text-bunker-500 "
+								href={item.href}
+								key={item.name}
+							>
+								<span className="sr-only">{item.name}</span>
+								<Image
+									alt={item.name}
+									className="h-5 w-5 opacity-60 brightness-0 invert filter transition-opacity duration-300 hover:opacity-100"
+									height={20}
+									src={item.icon}
+									width={20}
+								/>
+							</Link>
+						))}
+					</div> */}
+					<p className="mt-6 text-bunker-500 text-xs leading-5 sm:order-1 sm:mt-0">
 						&copy; {new Date().getFullYear()} Bionk. Todos os direitos
 						reservados.
 					</p>
 				</div>
 			</div>
-			<div className="mx-auto flex h-full w-full items-center justify-center p-4">
+			{/* <div className="mx-auto flex h-full w-full items-center justify-center p-4">
 				<Image
 					alt="Logo Bionk"
 					height={1000}
-					src={
-						"https://res.cloudinary.com/dlfpjuk2r/image/upload/v1755640991/bionk-logo-white_ld4dzs.svg"
-					}
+					src={"/images/big-bionk-white.svg"}
 					width={1000}
 				/>
-			</div>
+			</div> */}
 		</footer>
 	);
 };
